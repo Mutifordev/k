@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kibariye İçin 💖</title>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kibariye İçin 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #ffafcc, #ffc8dd, #ffb3c6);
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    
+    
+    h1 {
+      margin-top: 60px;
+      font-size: 2.8em;
+      color: #fff;
+      text-shadow: 0 0 10px #ff5e8e;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff5e8e; }
+      to { text-shadow: 0 0 25px #ff99bb, 0 0 50px #ff5e8e; }
+    }
+
+    .photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 50px 0;
+      gap: 20px;
+    }
+
+    .photo-gallery img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      transition: transform 0.4s ease;
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px;
+      margin: 40px auto;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 1em;
+      outline: none;
+      resize: none;
+      font-family: inherit;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+    }
+
+    button {
+      background-color: #ff5e8e;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff3b7b;
+      box-shadow: 0 0 15px #ff5e8e;
+    }
+
+    .secret {
+      margin-top: 40px;
+      padding: 20px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1em;
+    }
+
+    .secret-message {
+      display: none;
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      color: #c63636;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    /* Kalp animasyonu */
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff3b7b;
+      font-size: 20px;
+      animation: fall linear forwards;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Size Layık değil ama Yaptık birşeyler hanımefendi 💖</h1>
+
+  <div class="photo-gallery">
+    <img src="/WhatsApp Image 2025-12-15 at 14.35.18.jpeg"" alt="Sevgilim 1">
+    <img src="/WhatsApp Image 2025-12-15 at 14.35.19 kopyası 2.jpeg" alt="Sevgilim 2">
+    <img src="/WhatsApp Image 2025-12-15 at 14.35.19 kopyası.jpeg" alt="Sevgilim 3">
+    <img src="/WhatsApp Image 2025-12-15 at 14.35.19.jpeg" alt="Biz Beraber">
+  </div>
+
+  <div class="message-box">
+    <h2>💌 Bana Mesaj Yaz 💌</h2>
+    <textarea id="msg" placeholder="Buraya duygularını yazabilirsin.."></textarea>
+    <br>
+    <button onclick="sendMessage()">Gönder 💞</button>
+    <p id="displayMsg"></p>
+  </div>
+
+  <div class="secret">
+    <h2>🔒 Gizli Mesaj Alanı</h2>
+    <input type="password" id="secretKey" placeholder="Şifreyi Gir bakim">
+    <button onclick="checkPassword()">Göster</button>
+    <div class="secret-message" id="secretMessage">
+      💕 Senin İçin Çabaladığımı Görüceksin Tatlısın :)
+      
+      Not: Top Değilim paksfapkfpakfpa💕
+    </div>
+  </div>
+
+  <script>
+    // Mesaj gönderme
+    function sendMessage() {
+      const msg = document.getElementById("msg").value;
+      const display = document.getElementById("displayMsg");
+      if (msg.trim() === "") {
+        display.innerHTML = "Bir şeyler yaz tatlım 💌";
+      } else {
+        display.innerHTML = "Mesajın kaydedildi 💖: " + msg;
+        document.getElementById("msg").value = "";
+      }
+    }
+
+    // Gizli mesaj şifre kontrolü
+    function checkPassword() {
+      const key = document.getElementById("secretKey").value;
+      const secret = document.getElementById("secretMessage");
+      if (key === "kibariye") {
+        secret.style.display = "block";
+      } else {
+        alert("Yanlış şifre tatlım 😘");
+      }
+    }
+
+    // Kalp efekti
+// Kalp efekti
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (4 + Math.random() * 3) + "s"; // biraz daha yavaş düşsün
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 8000); // animasyon bitince sil
+}
+
+// Daha yavaş üretim
+setInterval(createHeart, 900); // 200ms yerine 800ms
+
+  </script>
+</body>
+</html>
+
